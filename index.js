@@ -111,19 +111,25 @@ function twoString (str) {
 console.log(twoString(["кот", "кто"]));
 
 function sliceMas (mas, size) {
-    const arr = [[],[]];
+    const arr = [];
+    let count = 0;
 
-    for(let i = 0; i < size; i++){
-        arr[0].push(mas[i]);
+    for (let i = 0; i < mas.length/size; i++) {
+        arr.push([]);
     }
-    for(let j = size; j < size*2; j++){
-        arr[1].push(mas[j]);
+    for (let i = 0; i < arr.length; i++){
+        for (let j = 0; j <= mas.length; j++){
+            if (arr[i].length == size || !Boolean(mas[count])){
+                break;
+            }
+            arr[i].push(mas[count++]);
+        }
     }
 
     return arr;
 }
 
-console.log(sliceMas([1, 2, 3, 4, 5, 6, 7, 8], 5));
+console.log(sliceMas([1, 2, 3, 4, 5, 6, 7, 8], 3));
 
 function recursionMas (mas, n) {
     mas.push(n);
