@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../css/register_style.css">
+</head>
+<body>
+<div class="register">
+    <div class="container">
+        <a href="../index.html" class="back-to-login">
+            <img src="../img/back.svg" alt="" class="arrow-back">
+        </a>
+        <div class="register__top">
+            <img src="../img/logo.svg" alt="" class="register-logo">
+            <h1 class="register__title">Регистрация</h1>
+        </div>
+        <form action="post" class="register-form">
+            <div class="register-form__item">
+                <label for="name">Имя</label>
+                <input type="text" id="name" class="register__input">
+            </div>
+            <div class="register-form__item">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="register__input">
+            </div>
+            <div class="register-form__item">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" class="register__input">
+            </div>
+            <div class="register-form__item">
+                <label for="repeat-password">Подтвердите пароль</label>
+                <input type="password" id="repeat-password" class="register__input">
+            </div>
+            <div class="register-form__item">
+                <button class="register-btn">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
