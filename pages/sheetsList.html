@@ -15,6 +15,7 @@
             <a href="boardList.html" class="header-logo">
                 <img src="../img/logo.svg" alt="Логотип">
             </a>
+            <h1 class="site-name">Notes</h1>
         </div>
     </div>
 </header>
@@ -33,11 +34,11 @@
                     <div class="lists__item">
                         <div class="placeholder">
                             Список
+                            <img src="../img/expand.svg" alt="" class="expand-icon">
                         </div>
                         <div class="elements">
-                            <label class="elements-create__label">
-                                <input type="text" class="elements-create__input" placeholder="Новый элемент">
-                            </label>
+                            <label class="elements-create__label" for="new-element">Новый элемент</label>
+                            <input type="text" id="new-element" class="elements-create__input">
                             <ul class="elements-list">
                                 <li class="element-item">
                                     <span class="element-placeholder">Элемент списка</span>
@@ -55,17 +56,16 @@
                         </div>
                     </div>
                     <div class="lists__item">
-                        <ul class="existing-lists">
-                            <li class="list">
-                                Список 1
-                            </li>
-                            <li class="list">
-                                Список 2
-                            </li>
-                            <li class="list">
-                                Список 2
-                            </li>
-                        </ul>
+                        <div class="list">
+                            Список 1
+                            <img src="../img/expand.svg" alt="" class="expand-icon">
+                        </div>
+                    </div>
+                    <div class="lists__item">
+                        <div class="list">
+                            Список 2
+                            <img src="../img/expand.svg" alt="" class="expand-icon">
+                        </div>
                     </div>
                 </div>
             </div>

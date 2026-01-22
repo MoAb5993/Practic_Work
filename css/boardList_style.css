@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +8,15 @@
 }
 
 body {
+    background: #E3FBE3;
+    color: #0A470A;
+    font-family: Caveat, sans-serif;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 120%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
-    background: #c9c9c9;
-    color: #000000;
-    font-family: Inter, sans-serif;
-    font-size: 14px;
-    line-height: 120%;
 }
 
 a {
@@ -32,7 +35,13 @@ button {
 }
 
 .header {
-    background: #fff;
+    background: #213A21;
+    color: #ffffff;
+}
+
+.site-name {
+    font-family: Dynalight, sans-serif;
+    margin-left: 10px;
 }
 
 .header_inner {
@@ -43,7 +52,7 @@ button {
 }
 
 .footer {
-    background: #FFFFFF;
+    background: #213A21;
     margin-top: auto;
 }
 
@@ -52,6 +61,11 @@ button {
     justify-content: center;
     align-items: center;
     height: 100px;
+}
+
+.technical-support {
+    color: white;
+    font-size: 18px;
 }
 
 .main {
@@ -72,7 +86,9 @@ button {
 }
 
 .board-create__btn {
-    background: #2DBE25;
+    background: #213A21;
+    font-family: Caveat, sans-serif;
+    font-size: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -89,8 +105,9 @@ button {
 }
 
 .board-create-form {
-    background: #fff;
-    height: 250px;
+    background: #F1FFD0;
+    border: 2px solid #213A21;
+    height: 180px;
 }
 
 .board-create-form__item {
@@ -103,9 +120,9 @@ button {
 }
 
 .board-create-form__input {
-    border: none;
-    border-radius: 10px;
-    background: #DEDEDE;
+    border-radius: 5px;
+    background: #E3FBE3;
+    border: 2px solid #213A21;
     width: 300px;
     height: 20px;
     padding: 10px;
@@ -115,18 +132,25 @@ button {
     outline: none;
 }
 
+.input-label {
+    font-size: 18px;
+}
+
 .create-btn {
-    background: #3FF834;
+    background: #C7F7C7;
+    font-family: Caveat, sans-serif;
+    font-size: 18px;
     width: 120px;
     height: 30px;
-    border-radius: 10px;
-    border: 1px solid #000000;
+    border-radius: 5px;
 }
 
 .cancel-btn {
+    background: #F7C5C5;
+    font-family: Caveat, sans-serif;
+    font-size: 18px;
     margin-left: 50px;
     width: 120px;
     height: 30px;
-    border-radius: 10px;
-    border: 1px solid #000000;
+    border-radius: 5px;
 }

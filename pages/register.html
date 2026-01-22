@@ -11,32 +11,31 @@
 <body>
 <div class="register">
     <div class="container">
-        <a href="../index.html" class="back-to-login">
-            <img src="../img/back.svg" alt="" class="arrow-back">
-        </a>
         <div class="register__top">
-            <img src="../img/logo.svg" alt="" class="register-logo">
             <h1 class="register__title">Регистрация</h1>
         </div>
         <form action="post" class="register-form">
             <div class="register-form__item">
-                <label for="name">Имя</label>
+                <label for="name" class="input-label">Имя</label>
                 <input type="text" id="name" class="register__input">
             </div>
             <div class="register-form__item">
-                <label for="email">E-mail</label>
+                <label for="email" class="input-label">E-mail</label>
                 <input type="email" id="email" class="register__input">
             </div>
             <div class="register-form__item">
-                <label for="password">Пароль</label>
+                <label for="password" class="input-label">Пароль</label>
                 <input type="password" id="password" class="register__input">
             </div>
             <div class="register-form__item">
-                <label for="repeat-password">Подтвердите пароль</label>
+                <label for="repeat-password" class="input-label">Подтвердите пароль</label>
                 <input type="password" id="repeat-password" class="register__input">
             </div>
-            <div class="register-form__item">
+            <div class="register-form__item" id="enter">
                 <button class="register-btn">Зарегистрироваться</button>
+            </div>
+            <div class="register-form__item">
+                <a href="../index.html" class="back-to-login">Назад</a>
             </div>
         </form>
     </div>

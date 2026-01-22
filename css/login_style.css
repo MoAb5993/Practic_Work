@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +8,10 @@
 
 body {
     font-family: Inter, sans-serif;
-    background: #c9c9c9;
+    background: #E3FBE3;
     font-size: 14px;
     line-height: 120%;
-    color: black;
+    color: #0A470A;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,21 +29,24 @@ button {
 }
 
 .login {
-    display: block;
+    background: #E3FBE3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 450px;
     max-height: 500px;
-    background: #fff;
-    border-radius: 10px;
+}
+
+.login__title {
+    font-family: Caveat, sans-serif;
+    font-style: normal;
+    font-size: 36px;
 }
 
 .login__top {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin: 40px;
-    gap: 15px
+    margin: 20px;
 }
 
 .login-to-register {
@@ -49,31 +54,44 @@ button {
 }
 
 .login-btn {
-    background: #3FF834;
-    border: 1px black solid;
+    background: transparent;
+    border: 2px #048E04 solid;
+    color: #0A470A;
     border-radius: 10px;
     width: 150px;
     height: 30px;
 }
 
 .login-form {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login-form__item {
-    margin: 30px;
+    margin: 10px;
 }
 
 .login__input {
-    border: none;
-    border-radius: 10px;
-    background: #DEDEDE;
+    border-radius: 5px;
+    background: transparent;
+    border: 2px solid #048E04;
     width: 100%;
     height: 30px;
     padding: 10px;
 }
+
 .login__input:focus {
     outline: none;
+}
+
+.input-label {
+    display: flex;
+}
+
+.login-to-register {
+    text-decoration: none;
+    color: #0A470A;
 }
 
 

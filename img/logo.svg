@@ -1,3 +1,29 @@
-<svg width="35" height="47" viewBox="0 0 35 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M33.2031 3.125H26.5625V1.17188C26.5625 0.861074 26.439 0.563003 26.2193 0.343234C25.9995 0.123465 25.7014 0 25.3906 0H8.98438C8.67357 0 8.3755 0.123465 8.15574 0.343234C7.93597 0.563003 7.8125 0.861074 7.8125 1.17188V3.125H1.17188C0.861074 3.125 0.563003 3.24846 0.343234 3.46823C0.123465 3.688 0 3.98607 0 4.29688V45.7031C0 46.0139 0.123465 46.312 0.343234 46.5318C0.563003 46.7515 0.861074 46.875 1.17188 46.875H33.2031C33.5139 46.875 33.812 46.7515 34.0318 46.5318C34.2515 46.312 34.375 46.0139 34.375 45.7031V4.29688C34.375 3.98607 34.2515 3.688 34.0318 3.46823C33.812 3.24846 33.5139 3.125 33.2031 3.125ZM24.9873 9.375H9.3877V6.25H24.9873V9.375Z" fill="black"/>
+<svg width="50" height="77" viewBox="0 0 50 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="7.5" width="49" height="69" stroke="white"/>
+<rect x="3" y="16" width="22" height="2" fill="white"/>
+<rect x="15" y="41" width="22" height="2" fill="white"/>
+<rect x="32" y="16" width="15" height="2" fill="white"/>
+<rect x="3" y="25" width="15" height="2" fill="white"/>
+<rect x="11" y="34" width="15" height="2" fill="white"/>
+<rect x="22" y="48" width="15" height="2" fill="white"/>
+<rect x="22" y="62" width="15" height="2" fill="white"/>
+<rect x="3" y="48" width="15" height="2" fill="white"/>
+<rect x="3" y="62" width="15" height="2" fill="white"/>
+<rect x="32" y="25" width="15" height="2" fill="white"/>
+<rect x="3" y="55" width="15" height="2" fill="white"/>
+<rect x="3" y="69" width="15" height="2" fill="white"/>
+<rect x="22" y="25" width="8" height="2" fill="white"/>
+<rect x="22" y="55" width="8" height="2" fill="white"/>
+<rect x="22" y="69" width="8" height="2" fill="white"/>
+<rect x="39" y="48" width="8" height="2" fill="white"/>
+<rect x="39" y="62" width="8" height="2" fill="white"/>
+<rect x="30" y="34" width="14" height="2" fill="white"/>
+<rect x="3" y="41" width="8" height="2" fill="white"/>
+<rect x="3" y="34" width="5" height="2" fill="white"/>
+<rect x="43" y="55" width="5" height="2" fill="white"/>
+<rect x="43" y="69" width="5" height="2" fill="white"/>
+<rect x="41" y="41" width="5" height="2" fill="white"/>
+<rect x="35" y="55" width="5" height="2" fill="white"/>
+<rect x="35" y="69" width="5" height="2" fill="white"/>
+<rect x="14.5" y="0.5" width="21" height="7" stroke="white"/>
 </svg>
