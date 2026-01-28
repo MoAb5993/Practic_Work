@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: #E3FBE3;
+  color: #0A470A;
+  font-family: Caveat, sans-serif;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.listCreate {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 85px;
+}
+
+.board_name {
+  margin-bottom: 15px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.main__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.lists__item:first-of-type {
+  background: #F1FFD0;
+}
+
+.listCreate__btn {
+  background: #213A21;
+  font-family: Caveat, sans-serif;
+  font-size: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 450px;
+  height: 100px;
+  color: white;
+}
+
+
+.plusIcon {
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 50px;
+  width: 50px;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 300px;
+  border: 2px solid #213A21;
+  border-top: none;
+}
+
+.elementsCreate__label {
+  font-size: 18px;
+  padding-top:  15px;
+}
+
+.elementsCreate__input {
+  border: 2px solid #213A21;
+  border-radius: 5px;
+  background: #E3FBE3;
+  width: 200px;
+  height: 25px;
+  padding: 10px;
+}
+
+.elementsCreate__input:focus {
+  outline: none;
+}
+
+.placeholder {
+  background: #F1FFD0;
+  border: 2px solid #213A21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  height: 50px;
+  width: 300px;
+}
+
+.elementItem:last-of-type {
+  background: #F3C896;
+  color: #000000;
+  text-decoration: line-through;
+  border: 2px solid #213A21;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F1FFD0;
+  font-size: 36px;
+  width: 300px;
+  height: 50px;
+  border: 2px solid #213A21;
+  margin-bottom: 50px;
+}
+
+.list:last-of-type{
+  margin-bottom: 0;
+}
+
+.expandIcon {
+  transform: translateX(420%);
+}

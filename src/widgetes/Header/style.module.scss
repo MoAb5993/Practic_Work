@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+.header {
+  background: #213A21;
+  color: #ffffff;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.header_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.site-name {
+  font-family: Dynalight, sans-serif;
+  margin-left: 10px;
+}

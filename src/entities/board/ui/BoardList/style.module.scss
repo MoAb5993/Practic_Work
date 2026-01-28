@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #E3FBE3;
+  color: #0A470A;
+  font-family: Caveat, sans-serif;
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.main__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 450px;
+  height: 250px;
+}
+
+.boardCreateForm {
+  background: #F1FFD0;
+  border: 2px solid #213A21;
+  height: 180px;
+}
+
+.boardCreateForm__item {
+  padding: 15px;
+}
+
+.boardCreateForm__item label {
+  display: block;
+  padding: 10px 0;
+}
+
+.boardCreateForm__input {
+  border-radius: 5px;
+  background: #E3FBE3;
+  border: 2px solid #213A21;
+  width: 300px;
+  height: 20px;
+  padding: 10px;
+}
+
+.boardCreateForm__input:focus {
+  outline: none;
+}

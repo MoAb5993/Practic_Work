@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.main {
+  background: #E3FBE3;
+  color: #0A470A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.register {
+  display: block;
+  background: #E3FBE3;
+  border-radius: 10px;
+  max-width: 450px;
+  max-height: 550px;
+}
+
+.register__top {
+  height: 30px;
+  margin: 20px
+}
+
+.register__title {
+  font-family: caveat, sans-serif;
+  font-size: 36px;
+}
+
+.register-form__item {
+  margin: 20px;
+}
+
+.register-form__item:last-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+#enter {
+  display: flex;
+  justify-content: center;
+}
+
+
+.register__input:focus {
+  outline: none;
+}
+
+.register-btn {
+  background: transparent;
+  border: 2px #048E04 solid;
+  color: #0A470A;
+  border-radius: 10px;
+  width: 180px;
+  height: 30px;
+}
+
+.arrow-back {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.back-to-login {
+  text-decoration: none;
+  color: #0A470A;
+}
