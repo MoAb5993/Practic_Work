@@ -12,11 +12,6 @@
   line-height: 120%;
 }
 
-button {
-  border: none;
-  cursor: pointer;
-}
-
 .container {
   margin: 0;
   padding: 0;
@@ -30,21 +25,21 @@ button {
   max-height: 550px;
 }
 
-.register__top {
+.registerTop {
   height: 30px;
   margin: 20px
 }
 
-.register__title {
+.registerTitle {
   font-family: caveat, sans-serif;
   font-size: 36px;
 }
 
-.register-form__item {
+.registerFormItem {
   margin: 20px;
 }
 
-.register-form__item:last-of-type {
+.registerFormItem:last-of-type {
   display: flex;
   justify-content: center;
 }
@@ -52,28 +47,4 @@ button {
 #enter {
   display: flex;
   justify-content: center;
-}
-
-
-.register__input:focus {
-  outline: none;
-}
-
-.register-btn {
-  background: transparent;
-  border: 2px #048E04 solid;
-  color: #0A470A;
-  border-radius: 10px;
-  width: 180px;
-  height: 30px;
-}
-
-.arrow-back {
-  margin-top: 10px;
-  margin-left: 15px;
-}
-
-.back-to-login {
-  text-decoration: none;
-  color: #0A470A;
 }

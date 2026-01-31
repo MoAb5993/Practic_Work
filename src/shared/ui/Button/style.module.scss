@@ -1,9 +1,53 @@
 .register {
-  margin-top: 15px;
   background: transparent;
   border: 2px #048E04 solid;
   color: #0A470A;
   border-radius: 10px;
   width: 180px;
   height: 30px;
+  cursor: pointer;
+}
+
+.AcceptBtn {
+  background: #C7F7C7;
+  font-family: Caveat, sans-serif;
+  font-size: 18px;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.cancelBtn {
+  background: #F7C5C5;
+  font-family: Caveat, sans-serif;
+  font-size: 18px;
+  margin-left: 75px;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.boardCreateBtn {
+  background: #213A21;
+  font-family: Caveat, sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.plusIcon {
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 50px;
+  width: 50px;
 }

@@ -1,27 +1,29 @@
-import {AcceptButton, CancelButton, ElementButton, Input, Label} from "../../../../shared/ui";
+import {Button, Input, Label} from "../../../../shared/ui";
 import style from "./style.module.scss";
 
 export const BoardList = () => {
 
     return (
+        <body className={style.body}>
         <main className={style.main}>
             <div className={style.container}>
-                <div className={style.main__inner}>
+                <div className={style.mainInner}>
                     <div className={style.boardCreate}>
-                        <ElementButton>Создать доску</ElementButton>
+                        <Button type='create'>Создать доску</Button>
                         <form action="put" className={style.boardCreateForm}>
-                            <div className={style.boardCreateForm__item}>
+                            <div className={style.boardCreateFormItem}>
                                 <Label htmlFor="boardName">Название доски</Label>
                                 <Input type="text" name="boardName" id="boardName"/>
                             </div>
-                            <div className={style.boardCreateForm__item}>
-                                <AcceptButton>Создать</AcceptButton>
-                                <CancelButton>Отменить</CancelButton>
+                            <div className={style.boardCreateFormItem}>
+                                <Button type='accept'>Создать</Button>
+                                <Button type='cancel'>Отменить</Button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </main>
+        </body>
     )
 }
