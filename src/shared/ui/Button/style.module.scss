@@ -1,4 +1,4 @@
-.register {
+.auth {
   background: transparent;
   border: 2px #048E04 solid;
   color: #0A470A;
@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.AcceptBtn {
+.accept {
   background: #C7F7C7;
   font-family: Caveat, sans-serif;
   font-size: 18px;
@@ -19,7 +19,7 @@
   border: none;
 }
 
-.cancelBtn {
+.cancel {
   background: #F7C5C5;
   font-family: Caveat, sans-serif;
   font-size: 18px;
@@ -31,7 +31,7 @@
   border: none;
 }
 
-.boardCreateBtn {
+.create {
   background: #213A21;
   font-family: Caveat, sans-serif;
   font-size: 20px;
@@ -45,7 +45,7 @@
   border: none;
 }
 
-.plusIcon {
+.icon {
   margin-left: 15px;
   margin-right: 15px;
   height: 50px;

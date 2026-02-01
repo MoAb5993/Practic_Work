@@ -1,35 +1,12 @@
 import style from './style.module.scss'
-import plus from "../../img/plus.svg";
+import icon from "../../img/plus.svg";
 
-export const Button = ({children, type}) => {
+export const Button = ({children, type, srcIcon}) => {
 
-    switch (type) {
-        case 'auth':
-            return (
-                <button className={style.register}>
-                    {children}
-                </button>
-            )
-        case 'accept':
-            return (
-                <button className={style.AcceptBtn}>
-                    {children}
-                </button>
-            )
-        case 'cancel':
-            return (
-                <button className={style.cancelBtn}>
-                    {children}
-                </button>
-            )
-        case 'create':
-            return (
-                <button className={style.boardCreateBtn}>
-                    <img src={plus} alt="" className={style.plusIcon}/>
-                    {children}
-                </button>
-            )
-        default:
-            return null;
-    }
+    return (
+        <button className={style[type]}>
+            {srcIcon && <img src={icon} alt="" className={style.icon} />}
+            {children}
+        </button>
+    )
 }

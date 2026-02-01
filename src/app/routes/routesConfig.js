@@ -3,7 +3,7 @@ import {AuthPage} from "../../pages/Auth";
 import {RegisterPage} from "../../pages/Register";
 import {BoardPage} from "../../pages/Board";
 import {ListsPage} from "../../pages/Lists";
-import { ENUM_LINK } from '../../shared/Constans';
+import { ENUM_LINK } from '../../shared/constans';
 
 export const routesConfig = createBrowserRouter([
 

@@ -7,7 +7,7 @@ export const Footer = () => {
         <footer className={style.footer}>
             <div className={style.container}>
                 <div className={style.footerInner}>
-                    <Link href="https://kospbstin.ru/" type='tech-support'>Техническая поддержка</Link>
+                    <Link href="https://kospbstin.ru/" type='tech'>Техническая поддержка</Link>
                 </div>
             </div>
         </footer>

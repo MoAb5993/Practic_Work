@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 import {Input, Button, Label, Link} from "../../../../shared/ui";
-import {ENUM_LINK} from "../../../../shared/Constans";
+import {ENUM_LINK} from "../../../../shared/constans";
 
 export const Register = () => {
 
@@ -34,7 +34,7 @@ export const Register = () => {
                             </Button>
                         </div>
                         <div className={style.registerFormItem}>
-                            <Link href={ENUM_LINK.MAIN}>Назад</Link>
+                            <Link href={ENUM_LINK.MAIN} type='link'>Назад</Link>
                         </div>
                     </form>
                 </div>

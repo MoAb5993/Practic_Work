@@ -1,4 +1,4 @@
-import {List} from "../../../../shared/ui/List";
+import {List} from "../../../../shared/ui";
 import {ListInner} from "../ListInner";
 import expand from "../../../../shared/img/expand.svg";
 import style from "./style.module.scss";
@@ -11,7 +11,7 @@ export const Lists = () => {
         <main>
             <div className={style.listCreate}>
                 <h1 className={style.boardName}>Моя Доска</h1>
-                <Button type='create'>
+                <Button type='create' srcIcon>
                     Новый список
                 </Button>
             </div>

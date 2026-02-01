@@ -1,6 +1,6 @@
 import styles from './style.module.scss'
 import {Button, Input, Label, Link} from "../../../../shared/ui";
-import {ENUM_LINK} from "../../../../shared/Constans";
+import {ENUM_LINK} from "../../../../shared/constans";
 
 export const Auth = () => {
 
@@ -24,7 +24,7 @@ export const Auth = () => {
                             <Button type='auth'>Войти</Button>
                         </div>
                         <div className={styles.loginFormItem}>
-                            <Link href={ENUM_LINK.REGISTER}>Зарегистрироваться</Link>
+                            <Link href={ENUM_LINK.REGISTER} type='link'>Зарегистрироваться</Link>
                         </div>
                     </form>
                 </div>
