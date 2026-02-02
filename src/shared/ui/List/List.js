@@ -1,5 +1,5 @@
 import style from './style.module.scss'
-import expand from '../../shared/img/expand.svg'
+import expand from '../../img/expand.svg'
 
 export const List = ({children}) => {
 

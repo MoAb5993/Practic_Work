@@ -1,6 +1,6 @@
-import {Link} from "../../shared/ui";
+import {Link} from "../index";
 import style from './style.module.scss'
-import logo from '../../shared/img/logo.svg'
+import logo from '../../img/logo.svg'
 
 export const Header = () => {
 

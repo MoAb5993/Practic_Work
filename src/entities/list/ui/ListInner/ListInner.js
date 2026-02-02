@@ -7,9 +7,9 @@ export const ListInner = () => {
     return (
         <div className={style.elements}>
             <div className={style.elementsCreate}>
-                <Label className="elements-create__label" htmlFor="new-element">Новый
+                <Label htmlFor="new-element">Новый
                     элемент</Label>
-                <Input type="text" id="new-element" className="elements-create__input"/>
+                <Input type="text" id="new-element"/>
             </div>
             <ul className="elements-list">
                 <ListItem>Элемент списка</ListItem>

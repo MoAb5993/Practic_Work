@@ -1,24 +1,25 @@
-import {List} from "../../../../widgetes/List";
+import {List} from "../../../../shared/ui";
 import {ListInner} from "../ListInner";
 import expand from "../../../../shared/img/expand.svg";
 import style from "./style.module.scss";
-import {ElementButton} from "../../../../shared/ui";
+import {Button} from "../../../../shared/ui";
 
 export const Lists = () => {
 
     return (
+        <body className={style.body}>
         <main>
             <div className={style.listCreate}>
-                <h1 className={style.board_name}>Моя Доска</h1>
-                <ElementButton className="list-create__btn">
+                <h1 className={style.boardName}>Моя Доска</h1>
+                <Button type='create' icon='ADD'>
                     Новый список
-                </ElementButton>
+                </Button>
             </div>
             <div className={style.main}>
                 <div className={style.container}>
-                    <div className={style.main__inner}>
+                    <div className={style.mainInner}>
                         <div className={style.lists}>
-                            <div className={style.lists__item}>
+                            <div className={style.listsItem}>
                                 <div className={style.placeholder}>
                                     Список
                                     <img src={expand} alt="" className={style.expandIcon}/>
@@ -32,5 +33,6 @@ export const Lists = () => {
                 </div>
             </div>
         </main>
+        </body>
     )
 }

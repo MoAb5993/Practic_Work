@@ -3,25 +3,26 @@ import {AuthPage} from "../../pages/Auth";
 import {RegisterPage} from "../../pages/Register";
 import {BoardPage} from "../../pages/Board";
 import {ListsPage} from "../../pages/Lists";
+import { ENUM_LINK } from '../../shared/constans';
 
 export const routesConfig = createBrowserRouter([
 
     {
         children:[
             {
-                path: '/',
+                path: ENUM_LINK.MAIN,
                 element: <AuthPage/>
             },
             {
-                path: '/register',
+                path: ENUM_LINK.REGISTER,
                 element: <RegisterPage/>
             },
             {
-                path: '/boards',
+                path: ENUM_LINK.BOARDS,
                 element: <BoardPage/>
             },
             {
-                path: '/lists',
+                path: ENUM_LINK.LIST,
                 element: <ListsPage/>
             }
 

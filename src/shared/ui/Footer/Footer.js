@@ -1,5 +1,5 @@
 import style from './style.module.scss'
-import {SupportLink} from "../../shared/ui/SupportLink";
+import {Link} from "../Link";
 
 export const Footer = () => {
 
@@ -7,7 +7,7 @@ export const Footer = () => {
         <footer className={style.footer}>
             <div className={style.container}>
                 <div className={style.footerInner}>
-                    <SupportLink href="https://kospbstin.ru/" className={style.technicalSupport}>Техническая поддержка</SupportLink>
+                    <Link href="https://kospbstin.ru/" type='tech'>Техническая поддержка</Link>
                 </div>
             </div>
         </footer>
