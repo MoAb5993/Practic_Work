@@ -9,7 +9,7 @@ export const BoardList = () => {
             <div className={style.container}>
                 <div className={style.mainInner}>
                     <div className={style.boardCreate}>
-                        <Button type='create' srcIcon >Создать доску</Button>
+                        <Button type='create' icon="ADD" >Создать доску</Button>
                         <form action="put" className={style.boardCreateForm}>
                             <div className={style.boardCreateFormItem}>
                                 <Label htmlFor="boardName">Название доски</Label>

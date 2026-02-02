@@ -11,7 +11,7 @@ export const Lists = () => {
         <main>
             <div className={style.listCreate}>
                 <h1 className={style.boardName}>Моя Доска</h1>
-                <Button type='create' srcIcon>
+                <Button type='create' icon='ADD'>
                     Новый список
                 </Button>
             </div>
