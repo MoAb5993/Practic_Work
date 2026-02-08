@@ -1,8 +1,8 @@
 import {List} from "../../../../shared/ui";
 import {ListInner} from "../ListInner";
+import {Button} from "../../../../shared/ui";
 import expand from "../../../../shared/img/expand.svg";
 import style from "./style.module.scss";
-import {Button} from "../../../../shared/ui";
 
 export const Lists = () => {
 

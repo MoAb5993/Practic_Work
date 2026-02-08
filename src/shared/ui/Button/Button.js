@@ -1,5 +1,5 @@
-import style from './style.module.scss'
 import {ENUM_ICONS} from "../../constans/icons";
+import style from './style.module.scss'
 
 export const Button = ({children, type, icon, ...props}) => {
 

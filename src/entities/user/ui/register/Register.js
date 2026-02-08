@@ -1,12 +1,15 @@
-import style from './style.module.scss'
-import {Input, Button, Label, Link} from "../../../../shared/ui";
-import {ENUM_LINK} from "../../../../shared/constans";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
+import {Input, Button, Label, Link} from "../../../../shared/ui";
+import {Message} from "../../../../shared/ui/Message";
+import {ENUM_LINK} from "../../../../shared/constans";
 import {registerRequest} from "../../api";
+import style from './style.module.scss'
 
 export const Register = () => {
     const dispatch = useDispatch();
+
+    const {error} = useSelector(state => state.user);
 
     const [form, setForm] = useState({
         name: "",
@@ -90,6 +93,7 @@ export const Register = () => {
                         </div>
                     </div>
                 </div>
+                {error && <Message type='error'>Произошла ошибка: {error}</Message>}
             </div>
         </main>
     )

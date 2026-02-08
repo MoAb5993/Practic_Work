@@ -1,12 +1,15 @@
-import styles from './style.module.scss'
+import {useDispatch, useSelector} from "react-redux";
+import {useState} from "react";
+import {Message} from "../../../../shared/ui/Message";
 import {Button, Input, Label, Link} from "../../../../shared/ui";
 import {ENUM_LINK} from "../../../../shared/constans";
-import {useDispatch} from "react-redux";
-import {useState} from "react";
 import {loginRequest} from "../../api";
+import styles from './style.module.scss'
 
 export const Auth = () => {
     const dispatch = useDispatch();
+
+    const {error} = useSelector(state => state.user);
 
     const [form, setForm] = useState({
         email: "",
@@ -64,6 +67,7 @@ export const Auth = () => {
                         </div>
                     </div>
                 </div>
+                {error && <Message type='error'>Произошла ошибка: {error}</Message>}
             </div>
         </main>
     )

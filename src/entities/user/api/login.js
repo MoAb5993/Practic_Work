@@ -17,8 +17,12 @@ export const loginRequest = createAsyncThunk(
 
             return response.data;
         } catch (error) {
-            console.log('e:', error);
-            return rejectWithValue('error');
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.header);
+            }
+            return rejectWithValue(error.response.data.message);
         }
     }
 )
