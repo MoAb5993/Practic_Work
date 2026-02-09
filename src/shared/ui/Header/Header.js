@@ -1,6 +1,7 @@
-import {Link} from "../index";
+import {Links} from "../index";
 import style from './style.module.scss'
 import logo from '../../img/logo.svg'
+import {ENUM_LINK} from "../../constans";
 
 export const Header = () => {
 
@@ -8,9 +9,9 @@ export const Header = () => {
         <header className={style.header}>
             <div className={style.container}>
                 <div className={style.header_inner}>
-                    <Link href="#" className={style.headerLogo}>
+                    <Links to={ENUM_LINK.BOARDS} className={style.headerLogo}>
                         <img src={logo} alt="Логотип"/>
-                    </Link>
+                    </Links>
                     <h1 className={style.siteName}>Notes</h1>
                 </div>
             </div>

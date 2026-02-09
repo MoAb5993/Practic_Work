@@ -1,4 +1,4 @@
-import style from "../../../entities/user/ui/register/style.module.scss";
+import style from "./style.module.scss";
 
 export const Message = ({children, type}) => {
     return (

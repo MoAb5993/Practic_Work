@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
-import {Input, Button, Label, Link} from "../../../../shared/ui";
+import {useNavigate} from "react-router";
+import {Input, Button, Label, Links} from "../../../../shared/ui";
 import {Message} from "../../../../shared/ui/Message";
 import {ENUM_LINK} from "../../../../shared/constans";
 import {registerRequest} from "../../api";
@@ -8,8 +9,9 @@ import style from './style.module.scss'
 
 export const Register = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const {error} = useSelector(state => state.user);
+    const {error, token} = useSelector(state => state.user);
 
     const [form, setForm] = useState({
         name: "",
@@ -19,8 +21,11 @@ export const Register = () => {
     })
 
     const registration = () => {
-        if (form.name && form.email && form.password && form.password === form.password_confirmation) {
+        if (form.name && form.email && form.password && form.password === form.password_confirmation && !error) {
             dispatch(registerRequest({email: form.email, password: form.password, name: form.name}));
+        }
+        if (token) {
+            navigate(ENUM_LINK.BOARDS);
         }
     }
 
@@ -48,8 +53,9 @@ export const Register = () => {
                                 value={form.name}
                                 type="text"
                                 id="name"
-                                required
+                                status={form.name ? 'input' : 'empty'}
                             />
+                            {!form.name && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Label htmlFor="email">E-mail</Label>
@@ -59,8 +65,9 @@ export const Register = () => {
                                 value={form.email}
                                 type="email"
                                 id="email"
-                                required
+                                status={form.email ? 'input' : 'empty'}
                             />
+                            {!form.email && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Label htmlFor="password">Пароль</Label>
@@ -70,8 +77,9 @@ export const Register = () => {
                                 value={form.password}
                                 type="password"
                                 id="password"
-                                required
+                                status={form.password ? 'input' : 'empty'}
                             />
+                            {!form.password && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Label htmlFor="repeat-password">Подтвердите пароль</Label>
@@ -81,7 +89,9 @@ export const Register = () => {
                                 value={form.password_confirmation}
                                 type="password"
                                 id="repeat-password"
-                                required/>
+                                status={form.password_confirmation ? 'input' : 'empty'}
+                            />
+                            {!form.password_confirmation && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Button type='auth' onClick={registration}>
@@ -89,7 +99,9 @@ export const Register = () => {
                             </Button>
                         </div>
                         <div className={style.registerFormItem}>
-                            <Link href={ENUM_LINK.MAIN} type='link'>Назад</Link>
+                            <nav>
+                                <Links to={ENUM_LINK.MAIN} type='link'>Назад</Links>
+                            </nav>
                         </div>
                     </div>
                 </div>

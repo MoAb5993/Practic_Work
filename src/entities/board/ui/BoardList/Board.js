@@ -10,16 +10,21 @@ export const BoardList = () => {
                 <div className={style.mainInner}>
                     <div className={style.boardCreate}>
                         <Button type='create' icon="ADD" >Создать доску</Button>
-                        <form action="put" className={style.boardCreateForm}>
+                        <div className={style.boardCreateForm}>
                             <div className={style.boardCreateFormItem}>
                                 <Label htmlFor="boardName">Название доски</Label>
-                                <Input type="text" name="boardName" id="boardName"/>
+                                <Input
+                                    type="text"
+                                    name="boardName"
+                                    id="boardName"
+                                    status='input'
+                                />
                             </div>
                             <div className={style.boardCreateFormItem}>
                                 <Button type='accept'>Создать</Button>
                                 <Button type='cancel'>Отменить</Button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

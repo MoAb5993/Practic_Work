@@ -1,15 +1,17 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
+import {useNavigate} from "react-router";
 import {Message} from "../../../../shared/ui/Message";
-import {Button, Input, Label, Link} from "../../../../shared/ui";
+import {Button, Input, Label, Links} from "../../../../shared/ui";
 import {ENUM_LINK} from "../../../../shared/constans";
 import {loginRequest} from "../../api";
 import styles from './style.module.scss'
 
 export const Auth = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const {error} = useSelector(state => state.user);
+    const {error, token} = useSelector(state => state.user);
 
     const [form, setForm] = useState({
         email: "",
@@ -18,7 +20,10 @@ export const Auth = () => {
 
     const authRequest = () => {
         if (form.email && form.password) {
-            dispatch(loginRequest({email: form.email, password: form.password}))
+            dispatch(loginRequest({email: form.email, password: form.password}));
+        }
+        if (token) {
+            navigate(ENUM_LINK.BOARDS);
         }
     }
 
@@ -45,8 +50,9 @@ export const Auth = () => {
                                 onChange={handleChange}
                                 type="email"
                                 id="email"
-                                required
+                                status={form.email ? 'input' : 'empty'}
                             />
+                            {!form.email && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={styles.loginFormItem}>
                             <Label for="password">Пароль</Label>
@@ -56,14 +62,17 @@ export const Auth = () => {
                                 value={form.password}
                                 type="password"
                                 id="password"
-                                required
+                                status={form.password ? 'input' : 'empty'}
                             />
+                            {!form.password && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={styles.loginFormItem}>
                             <Button onClick={authRequest} type='auth'>Войти</Button>
                         </div>
                         <div className={styles.loginFormItem}>
-                            <Link href={ENUM_LINK.REGISTER} type='link'>Зарегистрироваться</Link>
+                            <nav>
+                                <Links to={ENUM_LINK.REGISTER} type='link'>Регистрация</Links>
+                            </nav>
                         </div>
                     </div>
                 </div>

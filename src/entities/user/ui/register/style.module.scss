@@ -44,6 +44,11 @@
   justify-content: center;
 }
 
+.registerFormItem:nth-last-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+
 #enter {
   display: flex;
   justify-content: center;

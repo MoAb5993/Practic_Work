@@ -1,11 +1,12 @@
+import {Link} from "react-router";
 import styles from "./style.module.scss";
 
-export const Link = ({children, href, type}) => {
+export const Links = ({children, to, type}) => {
 
     return (
-        <a href={href} className={styles[type]}>
+        <Link to={to} className={styles[type]}>
             {children}
-        </a>
+        </Link>
     )
 
 }
