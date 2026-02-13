@@ -1,6 +1,5 @@
 import {BoardList} from "../../entities/board";
-import {Header} from "../../shared/ui/Header";
-import {Footer} from "../../shared/ui/Footer";
+import {Header, Footer} from "../../shared/ui";
 
 
 export const BoardPage = () => {

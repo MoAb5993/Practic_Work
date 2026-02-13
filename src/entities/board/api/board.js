@@ -1,27 +1,20 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import $api from "../../../shared/api";
 
-export const registerRequest = createAsyncThunk(
-    'registerSlice/registerRequest',
-    async ({name, email, password}, thunkAPI) => {
+export const createBoard = createAsyncThunk(
+    'bardSlice/createBoard',
+    async ({name}, thunkAPI) => {
         const {
             rejectWithValue,
         } = thunkAPI;
 
         try {
-            const response = await $api.post(`/auth/registration`, {name, email, password})
-                .then(response => {
-                    const token = response.data.token;
-
-                    localStorage.setItem('token', token);
-                })
-
+            const response = await $api.post('/board/createBoard', {name})
 
             if (!response.data) {
-                throw new Error()
+                throw new Error();
             }
 
-            return response.data;
         } catch (error) {
             if (error.response) {
                 console.log(error.response.data);

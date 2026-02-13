@@ -10,6 +10,11 @@ export const loginRequest = createAsyncThunk(
 
         try {
             const response = await $api.post('/auth/login', {email, password})
+                .then(response => {
+                    const token = response.data.token;
+
+                    localStorage.setItem('token', token);
+                })
 
             if (!response.data) {
                 throw new Error();

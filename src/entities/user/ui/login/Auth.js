@@ -11,7 +11,7 @@ export const Auth = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const {error, token} = useSelector(state => state.user);
+    const {error} = useSelector(state => state.user);
 
     const [form, setForm] = useState({
         email: "",
@@ -22,7 +22,7 @@ export const Auth = () => {
         if (form.email && form.password) {
             dispatch(loginRequest({email: form.email, password: form.password}));
         }
-        if (token) {
+        if (localStorage.getItem("token")) {
             navigate(ENUM_LINK.BOARDS);
         }
     }

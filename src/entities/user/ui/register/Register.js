@@ -11,7 +11,7 @@ export const Register = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const {error, token} = useSelector(state => state.user);
+    const {error} = useSelector(state => state.user);
 
     const [form, setForm] = useState({
         name: "",
@@ -24,7 +24,7 @@ export const Register = () => {
         if (form.name && form.email && form.password && form.password === form.password_confirmation && !error) {
             dispatch(registerRequest({email: form.email, password: form.password, name: form.name}));
         }
-        if (token) {
+        if (localStorage.getItem("token")) {
             navigate(ENUM_LINK.BOARDS);
         }
     }
