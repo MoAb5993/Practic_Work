@@ -6,9 +6,15 @@ html {
 html,
 body,
 #root {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #E3FBE3;
+    color: #0A470A;
+    font-family: Caveat, sans-serif;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 120%;
 }
 
 *,
