@@ -1,52 +1,35 @@
-import {useState, useEffect} from "react";
-import {useDispatch} from "react-redux";
+import {useState} from "react";
+// import {useDispatch} from "react-redux";
 import {Input, Label} from "../../../../shared/ui";
-import {createTask, fetchTasks} from "../../../task";
-import {Tasks} from "../Tasks";
+import {ListItem} from "../ListItem";
 import style from "./style.module.scss";
 
-export const ListInner = ({id, boardId}) => {
-    const dispatch = useDispatch();
-    // console.log("listId:",id.id)
+export const ListInner = () => {
+    // const dispatch = useDispatch();
 
     const [form, setForm] = useState({
         newElement: ""
     });
 
-    useEffect(() => {
-        dispatch(fetchTasks({listId: id, boardId: boardId}));
-    })
-
-    const handleChange = (e) => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        });
-    }
-
-    const handleNewTask = (e) => {
-        e.preventDefault();
-        if (form.newElement && form.newElement.trim().length > 0) {
-            dispatch(createTask({name: form.newElement.trim(), listId: id}));
-        }
-    }
-
     return (
         <div className={style.elements}>
-            <form className={style.elementsCreate} onSubmit={handleNewTask}>
-                <Label htmlFor="newElement">
-                    Новый элемент
-                </Label>
+            <div className={style.elementsCreate}>
+                <Label htmlFor="new-element">Новый
+                    элемент</Label>
                 <Input
                     type="text"
-                    id="newElement"
+                    id="new-element"
                     status='input'
-                    name="newElement"
+                    name="new-element"
                     value={form.newElement}
-                    onChange={handleChange}
+                    onChange={(e) => setForm(e.target.value)}
                 />
-            </form>
-            <Tasks boardId={boardId}/>
+            </div>
+            <ul className="elements-list">
+                <ListItem>Элемент списка</ListItem>
+                <ListItem>Элемент списка</ListItem>
+                <ListItem>Элемент списка</ListItem>
+            </ul>
         </div>
     )
 }
