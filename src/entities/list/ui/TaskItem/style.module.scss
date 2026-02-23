@@ -1,0 +1,41 @@
+.activatedElement {
+  background: #213A21;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+}
+
+.deactivatedElement {
+  background: #F3C896;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+  text-decoration: line-through;
+  border: 2px solid #213A21;
+}
+
+.elementPlaceholder {
+  margin-left: 10px;
+}
+
+.renameTask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option {
+  cursor: pointer;
+}
