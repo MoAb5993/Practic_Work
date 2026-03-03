@@ -1,12 +1,14 @@
-import { useState } from "react";
+import {useRef, useState} from "react";
 import {useNavigate} from "react-router";
 import {useDispatch} from "react-redux";
-import {deleteBoards, editBoard} from "../../api";
+import {useDrag, useDrop} from "react-dnd";
+import {deleteBoards, editBoard, fetchBoards, reorderBoard} from "../../api";
 import {Button, Input} from "../../../../shared/ui";
-import style from './style.module.scss'
 import {ENUM_LINK} from "../../../../shared/constans";
+import style from './style.module.scss'
 
 export const BoardItem = ({id, name, order}) => {
+    const ref = useRef(null)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -19,8 +21,9 @@ export const BoardItem = ({id, name, order}) => {
     const newNameRequest = (e) => {
         e.preventDefault();
         if (form.newBoardName && form.newBoardName.trim().length > 0) {
-            dispatch(editBoard({boardId: id, name: form.newBoardName}));
-            console.log(id)
+            dispatch(editBoard({boardId: id, name: form.newBoardName})).then(() => {
+                dispatch(fetchBoards());
+            });
         }
     }
 
@@ -34,16 +37,44 @@ export const BoardItem = ({id, name, order}) => {
         setUpdateInput(!updateInput);
     }
 
-    const deleteHandler = () => {
-        dispatch(deleteBoards(id));
+    const deleteHandler = async () => {
+        dispatch(deleteBoards(id)).then(() => {
+            dispatch(fetchBoards());
+        })
     }
 
     const boardInner = () => {
         navigate(ENUM_LINK.getBoardPath(id, name));
     }
 
+    const [{isDragging}, dragRef] = useDrag({
+        type: "board",
+        item: {id, order},
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging()
+        })
+    })
+
+    const [, dropRef] = useDrop({
+        accept: 'board',
+        drop(item, monitor) {
+            const dragId = item.id;
+            const dragOrder = item.order;
+            const dropId = id;
+            const dropOrder = order;
+
+            dispatch(reorderBoard({boardId: dragId, order: dropOrder})).then(() => {
+                dispatch(reorderBoard({boardId: dropId, order: dragOrder})).then(() => {
+                    dispatch(fetchBoards());
+                });
+            })
+        }
+    })
+
+    dragRef(dropRef(ref))
+
     return (
-        <div>
+        <div ref={ref} onDragOver={(e) => e.preventDefault()}>
             <div className='board'>
                 <div className={style.boardContent}>
                     <div className={style.title}>
@@ -66,7 +97,6 @@ export const BoardItem = ({id, name, order}) => {
                             />
                         </form>
                     )}
-                    {/*{id}*/}
                 </div>
             </div>
         </div>

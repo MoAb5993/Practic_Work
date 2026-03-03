@@ -12,6 +12,7 @@ export const Register = () => {
     const navigate = useNavigate();
 
     const {error} = useSelector(state => state.user);
+    const [requiredField, setRequiredField] = useState(false);
 
     const [form, setForm] = useState({
         name: "",
@@ -26,6 +27,9 @@ export const Register = () => {
         }
         if (localStorage.getItem("token")) {
             navigate(ENUM_LINK.BOARDS);
+        }
+        if (!form.name || !form.email || !form.password || !form.password_confirmation) {
+            setRequiredField(true);
         }
     }
 
@@ -53,9 +57,9 @@ export const Register = () => {
                                 value={form.name}
                                 type="text"
                                 id="name"
-                                status={form.name ? 'input' : 'empty'}
+                                status={(requiredField && !form.name) ? 'empty' : 'input'}
                             />
-                            {!form.name && <Message type='error'>Обязательное поле</Message>}
+                            {(requiredField && !form.name) && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Label htmlFor="email">E-mail</Label>
@@ -65,9 +69,9 @@ export const Register = () => {
                                 value={form.email}
                                 type="email"
                                 id="email"
-                                status={form.email ? 'input' : 'empty'}
+                                status={(requiredField && !form.email) ? 'empty' : 'input'}
                             />
-                            {!form.email && <Message type='error'>Обязательное поле</Message>}
+                            {(requiredField && !form.email) && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Label htmlFor="password">Пароль</Label>
@@ -77,9 +81,9 @@ export const Register = () => {
                                 value={form.password}
                                 type="password"
                                 id="password"
-                                status={form.password ? 'input' : 'empty'}
+                                status={(requiredField && !form.password) ? 'empty' : 'input'}
                             />
-                            {!form.password && <Message type='error'>Обязательное поле</Message>}
+                            {(requiredField && !form.password) && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Label htmlFor="repeat-password">Подтвердите пароль</Label>
@@ -89,9 +93,9 @@ export const Register = () => {
                                 value={form.password_confirmation}
                                 type="password"
                                 id="repeat-password"
-                                status={form.password_confirmation ? 'input' : 'empty'}
+                                status={(requiredField && !form.password_confirmation) ? 'empty' : 'input'}
                             />
-                            {!form.password_confirmation && <Message type='error'>Обязательное поле</Message>}
+                            {(requiredField && !form.password_confirmation) && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={style.registerFormItem}>
                             <Button type='auth' onClick={registration}>

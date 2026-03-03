@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {createBoard, fetchBoards, deleteBoards, editBoard} from "../api";
+import {createBoard, fetchBoards, deleteBoards, editBoard, reorderBoard} from "../api";
 
 const initialState = {
     name: null,
@@ -65,6 +65,18 @@ const boardSlice = createSlice({
                 state.id = action.payload.id;
             })
             .addCase(editBoard.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+
+            .addCase(reorderBoard.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(reorderBoard.fulfilled, (state) => {
+                state.loading = false;
+            })
+            .addCase(reorderBoard.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })

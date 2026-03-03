@@ -15,7 +15,7 @@ export const fetchTasks = createAsyncThunk (
                 throw new Error("НЕ ПРИХОДЯТ ЗАДАЧИ! ОТДЫХАЕМ, НАСЯНИКА")
             }
 
-            return response.data;
+            return {listId, task: response.data};
         } catch (error) {
             if (error.response) {
                 console.log(error.response.data);
@@ -91,6 +91,32 @@ export const deleteTask = createAsyncThunk (
 
             if (!response.data) {
                 throw new Error("НЕ УДАЛЯЕТСЯ ЗАДАЧА!")
+            }
+
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.header);
+            }
+            return rejectWithValue(error.response.data.message);
+        }
+    }
+)
+
+export const reorderTask = createAsyncThunk (
+    'taskSlice/reorderTask',
+    async ({taskId, newListId, boardId, order}, thunkAPI) => {
+        const {
+            rejectWithValue
+        } = thunkAPI
+
+        try {
+            const response = await $api.put(`/task/reorderTask`, {taskId, newListId, boardId, order});
+
+            if (!response.data) {
+                throw new Error("Не перемещается задачка")
             }
 
             return response.data;

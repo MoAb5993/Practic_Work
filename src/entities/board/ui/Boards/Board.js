@@ -1,9 +1,9 @@
 import {useDispatch} from "react-redux";
 import {useEffect, useState} from "react";
 import {Button, Input, Label} from "../../../../shared/ui";
+import {BoardList} from "../BoardList";
 import {createBoard, fetchBoards} from "../../api";
 import style from "./style.module.scss";
-import {BoardList} from "../BoardList/BoardList";
 
 export const Boards = () => {
     const dispatch = useDispatch();
@@ -21,7 +21,9 @@ export const Boards = () => {
     const boardCreate = (e) => {
         e.preventDefault();
         if (form.boardName && form.boardName.trim().length > 0) {
-            dispatch(createBoard({name: form.boardName}));
+            dispatch(createBoard({name: form.boardName})).then(() => {
+                dispatch(fetchBoards());
+            });
         }
     }
 

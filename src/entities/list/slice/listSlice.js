@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {fetchLists, createNewList, editList, deleteList} from "../api";
+import {fetchLists, createNewList, editList, deleteList, reorderList} from "../api";
 
 
 const initialState = {
@@ -63,6 +63,18 @@ const listSlice = createSlice({
                 state.loading = false;
             })
             .addCase(deleteList.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+
+            .addCase(reorderList.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(reorderList.fulfilled, (state, action) => {
+                state.loading = false;
+            })
+            .addCase(reorderList.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })
