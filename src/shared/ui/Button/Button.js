@@ -1,10 +1,10 @@
-import style from './style.module.scss'
 import {ENUM_ICONS} from "../../constans/icons";
+import style from './style.module.scss'
 
-export const Button = ({children, type, icon}) => {
+export const Button = ({children, type, icon, ...props}) => {
 
     return (
-        <button className={style[type]}>
+        <button {...props} className={style[type]}>
             {icon && <img src={ENUM_ICONS[icon]} alt="" className={style.icon} />}
             {children}
         </button>

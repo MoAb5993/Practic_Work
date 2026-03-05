@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+  padding-bottom: 150px;
+}
+
+.mainInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 450px;
+  height: 250px;
+}
+
+.boardCreateForm {
+  background: #F1FFD0;
+  border: 2px solid #213A21;
+  height: 180px;
+}
+
+.boardCreateFormItem {
+  padding: 15px;
+}
+
+.boardCreateFormItem label {
+  display: block;
+  padding: 10px 0;
+}

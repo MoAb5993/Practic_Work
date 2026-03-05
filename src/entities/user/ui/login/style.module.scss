@@ -42,4 +42,12 @@
   margin: 10px;
 }
 
+.loginFormItem:last-of-type {
+  display: flex;
+  justify-content: center;
+}
 
+.loginFormItem:nth-last-of-type(2) {
+  display: flex;
+  justify-content: center;
+}

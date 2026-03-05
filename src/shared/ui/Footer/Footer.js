@@ -1,5 +1,4 @@
 import style from './style.module.scss'
-import {Link} from "../Link";
 
 export const Footer = () => {
 
@@ -7,7 +6,7 @@ export const Footer = () => {
         <footer className={style.footer}>
             <div className={style.container}>
                 <div className={style.footerInner}>
-                    <Link href="https://kospbstin.ru/" type='tech'>Техническая поддержка</Link>
+                    <a href="https://kospbstin.ru/" className={style.tech}>Техническая поддержка</a>
                 </div>
             </div>
         </footer>
