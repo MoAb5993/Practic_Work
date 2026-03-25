@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchTasks, createTask, editTask, deleteTask} from "../api";
+import { fetchTasks, createTask, editTask, deleteTask, reorderTask} from "../api";
 
 const initialState = {
     tasks: [],
@@ -21,7 +21,19 @@ const taskSlice = createSlice({
             })
             .addCase(fetchTasks.fulfilled, (state, action) => {
                 state.loading = false;
-                state.tasks = action.payload;
+                if (state.tasks.find((el) => el.listId === action.payload.listId)) {
+                    state.tasks = state.tasks.map((el) => {
+                        if (el.listId === action.payload.listId) {
+                            return {
+                                ...el,
+                                task: action.payload.task
+                            }
+                        }
+                        return el
+                    })
+                } else {
+                    state.tasks = [...state.tasks, action.payload];
+                }
             })
             .addCase(fetchTasks.rejected, (state, action) => {
                 state.loading = false;
@@ -62,6 +74,18 @@ const taskSlice = createSlice({
                 state.loading = false;
             })
             .addCase(deleteTask.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+
+            .addCase(reorderTask.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(reorderTask.fulfilled, (state) => {
+                state.loading = false;
+            })
+            .addCase(reorderTask.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })

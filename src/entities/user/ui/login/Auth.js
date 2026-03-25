@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useState} from "react";
-import {useNavigate} from "react-router";
+import {useEffect, useState} from "react";
+import {replace, useNavigate} from "react-router";
 import {Message} from "../../../../shared/ui/Message";
 import {Button, Input, Label, Links} from "../../../../shared/ui";
 import {ENUM_LINK} from "../../../../shared/constans";
@@ -12,6 +12,7 @@ export const Auth = () => {
     const navigate = useNavigate();
 
     const {error} = useSelector(state => state.user);
+    const [requiredField, setRequiredField] = useState(false);
 
     const [form, setForm] = useState({
         email: "",
@@ -25,6 +26,9 @@ export const Auth = () => {
         if (localStorage.getItem("token")) {
             navigate(ENUM_LINK.BOARDS);
         }
+        if (!form.email || !form.password) {
+            setRequiredField(true);
+        }
     }
 
     const handleChange = (event) => {
@@ -33,6 +37,13 @@ export const Auth = () => {
             [event.target.name]: event.target.value,
         })
     }
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            navigate(ENUM_LINK.BOARDS, {replace: true});
+        }
+    }, [navigate]);
 
     return (
         <main className={styles.main}>
@@ -50,9 +61,9 @@ export const Auth = () => {
                                 onChange={handleChange}
                                 type="email"
                                 id="email"
-                                status={form.email ? 'input' : 'empty'}
+                                status={(requiredField && !form.email) ? 'empty' : 'input'}
                             />
-                            {!form.email && <Message type='error'>Обязательное поле</Message>}
+                            {(requiredField && !form.email) && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={styles.loginFormItem}>
                             <Label for="password">Пароль</Label>
@@ -62,9 +73,9 @@ export const Auth = () => {
                                 value={form.password}
                                 type="password"
                                 id="password"
-                                status={form.password ? 'input' : 'empty'}
+                                status={(requiredField && !form.password) ? 'empty' : 'input'}
                             />
-                            {!form.password && <Message type='error'>Обязательное поле</Message>}
+                            {(requiredField && !form.password) && <Message type='error'>Обязательное поле</Message>}
                         </div>
                         <div className={styles.loginFormItem}>
                             <Button onClick={authRequest} type='auth'>Войти</Button>

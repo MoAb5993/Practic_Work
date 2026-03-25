@@ -102,7 +102,29 @@ export const editBoard = createAsyncThunk (
             }
             return rejectWithValue(error.response.data.message);
         }
+    }
+)
 
+export const reorderBoard = createAsyncThunk (
+    'boardSlice/reorderBoard',
+    async ({boardId, order}, thunkAPI) => {
+        const {
+            rejectWithValue,
+        } = thunkAPI
 
+        try {
+            const response = await $api.put(`/board/reorderBoard`, {boardId, order});
+
+            if (!response.data) {
+                throw new Error("Не меняется порядок карточки")
+            }
+        } catch (error) {
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.header);
+            }
+            return rejectWithValue(error.response.data.message);
+        }
     }
 )

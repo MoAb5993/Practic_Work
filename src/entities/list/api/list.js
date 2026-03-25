@@ -104,3 +104,29 @@ export const deleteList = createAsyncThunk (
         }
     }
 )
+
+export const reorderList = createAsyncThunk(
+    'listSlice/reorderList',
+    async ({boardId, listId, order}, thunkAPI) => {
+        const {
+            rejectWithValue,
+        } = thunkAPI
+
+        try {
+            const response = await $api.put(`/list/reorderList`, {listId, boardId, order});
+
+            if (!response.data) {
+                throw new Error("Не удалось поменять листы")
+            }
+
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.header);
+            }
+            return rejectWithValue(error.response.data.message);
+        }
+    }
+)

@@ -32,7 +32,9 @@ export const Lists = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (form.newList && form.newList.trim().length > 0) {
-            dispatch(createNewList({name: form.newList, boardId: id}));
+            dispatch(createNewList({name: form.newList, boardId: id})).then(() => {
+                dispatch(fetchLists(id));
+            });
         }
     }
 
